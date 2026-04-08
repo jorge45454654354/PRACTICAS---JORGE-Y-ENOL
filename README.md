@@ -39,9 +39,9 @@ Serie de 10 vídeos cortos (1–2 minutos):
 
 ## Estructura del repositorio
 
-* guiones/
-* videos/
-* imagenes/
-* audios/
-* documentos/
-* partes_semanales/
+* guiones
+* videos
+* imagenes
+* audios
+* documentos
+* partes_semanales
