@@ -18,9 +18,7 @@ Serie de 10 vídeos cortos
 * Vikingo
 * Caballero medieval
 * Monje medieval
-* Campesino medieval
-* Médico medieval
-* Navegante de la Edad Moderna
+* Agricultor medieval
 * Soldado en la invasión napoleónica
 * Obrero en la revolución industrial
 * Testigo de un acontecimiento histórico
