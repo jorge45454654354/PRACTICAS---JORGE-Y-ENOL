@@ -2,6 +2,17 @@
 
 Duración estimada: 40–45 segundos
 
+## Título
+
+Entrevistamos a un vikingo en su poblado
+
+## Contexto histórico
+
+Año aproximado: Siglo IX (800–900 d.C.)
+Lugar: Escandinavia (actual Noruega, Suecia y Dinamarca)
+Personaje histórico: Guerrero vikingo
+Ocupación: Guerrero y explorador vikingo
+
 ## INTRODUCCIÓN
 
 JORGE:
