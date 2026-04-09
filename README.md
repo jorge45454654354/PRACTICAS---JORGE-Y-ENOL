@@ -14,7 +14,7 @@ Los contenidos estarán basados en hechos históricos reales, con el objetivo de
 
 Serie de 10 vídeos cortos (1–2 minutos):
 
-* Soldado romano
+* Julio César
 * Vikingo
 * Caballero medieval
 * Monje medieval
