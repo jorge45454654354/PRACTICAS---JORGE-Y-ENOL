@@ -1,5 +1,4 @@
-# GUION – ENTREVISTA A UN CABALLERO MEDIEVAL
-
+## GUIÓN - ENTREVISTA A UN CABALLERO MEDIEVAL
 Duración estimada: 40–45 segundos
 
 ## Título
