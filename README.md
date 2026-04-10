@@ -12,7 +12,7 @@ Los contenidos estarán basados en hechos históricos reales, con el objetivo de
 
 ## Formato
 
-Serie de 10 vídeos cortos 
+Serie de 8 vídeos cortos 
 
 * Julio César
 * Vikingo
