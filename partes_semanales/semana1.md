@@ -1,33 +1,44 @@
-# PARTE SEMANAL 1
-
-## Equipo
-
-* Enol Cienfuegos Roces (Capitán)
-* Jorge García Suárez
+# PARTE SEMANAL – SEMANA 1
 
 ## Semana
+Fecha: 
+08/04/2026 – 10/04/2026
 
-Semana 1
+## Integrantes del grupo
 
-## Asistencia
+Capitán: Enol Cienfuegos Roces  
+Miembros: Jorge García Suárez  
 
-* Martes: Presencial
-* Jueves: Presencial
+## Control de asistencia
 
-## Trabajo realizado
-
-* Creación del repositorio en GitHub
-* Creación de carpetas principales del proyecto
-* Organización inicial del proyecto
+Martes: Presencial – Enol y Jorge  
+Jueves: Presencial – Enol y Jorge  
+Resto de días: Teleformación
 
 ## Reparto de tareas
 
-* Enol: organización, documentación, guiones, herramientas IA y edición de vídeo
-* Jorge: herramientas IA y edición de vídeo
+Enol:
+- Creación de guiones de Julio César, Caballero medieval, Agricultor medieval y Obrero de la Revolución Industrial.
+- Generación de imágenes correspondientes a varios personajes históricos.
+- Creación de audios de las respuestas del personaje Julio César y Caballero medieval.
+- Organización del repositorio en GitHub.
 
+Jorge:
+- Creación de guiones de Vikingo, Soldado napoleónico y Monje medieval.
+- Generación de imágenes correspondientes a los personajes históricos.
+- Apoyo en la organización de archivos en el repositorio.
+- Preparación de contenidos para futuras entrevistas.
 
-## Próximos pasos
+## Incidencias
 
-* Crear primer guion histórico
-* Investigar herramientas IA
+No se han producido incidencias graves.
 
+Se han presentado algunas dificultades iniciales con la generación de imágenes mediante IA, pero se han resuelto ajustando los prompts.
+
+## Trabajo realizado esta semana
+
+- Creación de todos los guiones de entrevistas históricas.
+- Generación de la mayoría de las imágenes necesarias (falta una imagen pendiente).
+- Generación de audios correspondientes a las respuestas de Julio César y Caballero medieval.
+- Organización de carpetas y archivos en el repositorio GitHub.
+- Planificación del desarrollo del proyecto.
