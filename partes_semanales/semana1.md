@@ -13,7 +13,8 @@ Miembros: Jorge García Suárez
 
 Martes: Presencial – Enol y Jorge  
 Jueves: Presencial – Enol y Jorge  
-Resto de días: Teleformación
+Miércoles y viernes: Teleformación  
+Sábado y domingo: Sin actividad programada
 
 ## Reparto de tareas
 
@@ -39,6 +40,5 @@ Se han presentado algunas dificultades iniciales con la generación de imágenes
 
 - Creación de todos los guiones de entrevistas históricas.
 - Generación de la mayoría de las imágenes necesarias (falta una imagen pendiente).
-- Generación de audios correspondientes a las respuestas de Julio César y Caballero medieval.
-- Organización de carpetas y archivos en el repositorio GitHub.
-- Planificación del desarrollo del proyecto.
+- Generación de audios correspondientes a Julio César y Caballero medieval.
+- Organización del repositorio GitHub.
