@@ -35,6 +35,12 @@ JORGE:
 SOLDADO:
 La vida es dura. Caminamos largas distancias, entrenamos constantemente y debemos estar preparados para combatir en cualquier momento.
 
+JORGE: 
+¿Qué sientes antes de entrar en una batalla?
+
+SOLDADO: 
+Siento miedo, pero también valentía, porque debo luchar junto a mis compañeros.
+
 ## Despedida
 
 JORGE:
