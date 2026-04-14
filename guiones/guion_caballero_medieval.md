@@ -12,7 +12,7 @@ Lugar: Europa medieval
 Personaje histórico: Caballero medieval
 Ocupación: Guerrero al servicio de un rey o señor feudal
 
-## INTRODUCCIÓN
+## Introducción
 
 ENOL:
 Hola a todos. Hoy hemos viajado al pasado hasta la Edad Media, alrededor del siglo XIII.
