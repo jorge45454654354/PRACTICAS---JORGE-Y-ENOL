@@ -12,7 +12,8 @@ Personaje histórico: Julio César
 Cargo: Dictador de Roma
 
 Duración estimada: 40-45 segundos
-## INTRODUCCIÓN
+
+## Introducción
 
 ENOL:
 Hola a todos. Hoy hemos viajado al pasado hasta la antigua Roma, en el año 44 antes de Cristo.
@@ -20,7 +21,7 @@ Hola a todos. Hoy hemos viajado al pasado hasta la antigua Roma, en el año 44 a
 ENOL:
 Nos encontramos en el palacio de uno de los líderes más importantes de la historia: Julio César.
 
-## ENTREVISTA
+## Entrevista
 
 ENOL:
 Salve, Julio César. ¿Podrías presentarte y decirnos cuál es tu función en Roma?
@@ -34,7 +35,7 @@ ENOL:
 JULIO CÉSAR:
 Mi mayor logro ha sido expandir los territorios de Roma y fortalecer su poder frente a sus enemigos.
 
-## DESPEDIDA
+## Despedida
 
 ENOL:
 Gracias por compartir tu experiencia con nosotros. Ha sido un honor conocerte.
