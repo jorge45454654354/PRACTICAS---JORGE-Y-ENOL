@@ -35,6 +35,12 @@ JORGE:
 VIKINGO:
 Hemos navegado a lugares lejanos como Inglaterra, Francia y otras tierras desconocidas en busca de riquezas y nuevas oportunidades.
 
+JORGE: 
+¿Qué era lo más peligroso durante vuestros viajes por mar?
+
+VIKINGO: 
+Lo más peligroso eran las tormentas y los ataques enemigos. A veces el mar era muy duro y peligroso.
+
 ## Despedida
 
 JORGE:
