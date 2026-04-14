@@ -35,6 +35,12 @@ JORGE:
 MONJE:
 Nuestra vida es tranquila pero disciplinada. Rezamos varias veces al día, trabajamos en el huerto y estudiamos textos religiosos.
 
+JORGE: 
+¿Por qué es importante copiar libros en el monasterio?
+
+MONJE: 
+Porque así conservamos el conocimiento y evitamos que los textos importantes desaparezcan con el tiempo.
+
 ## Despedida
 
 JORGE:
