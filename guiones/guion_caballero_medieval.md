@@ -20,7 +20,7 @@ Hola a todos. Hoy hemos viajado al pasado hasta la Edad Media, alrededor del sig
 ENOL:
 Nos encontramos frente a un castillo medieval, donde vamos a hablar con uno de sus caballeros.
 
-## ENTREVISTA
+## Entrevista
 
 ENOL:
 Saludos, caballero. ¿Cuál es tu función dentro del reino?
@@ -34,7 +34,7 @@ ENOL:
 CABALLERO:
 Utilizo espada, escudo y armadura para protegerme. También entrenamos constantemente para estar preparados para la guerra.
 
-## DESPEDIDA
+## Despedida
 
 ENOL:
 Gracias por compartir tu experiencia con nosotros. Ha sido muy interesante conocer la vida de un caballero medieval.
