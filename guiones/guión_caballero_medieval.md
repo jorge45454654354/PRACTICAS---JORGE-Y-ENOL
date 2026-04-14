@@ -34,6 +34,12 @@ ENOL:
 CABALLERO:
 Utilizo espada, escudo y armadura para protegerme. También entrenamos constantemente para estar preparados para la guerra.
 
+ENOL: 
+¿Cómo te preparas antes de una batalla?
+
+CABALLERO: 
+Entrenamos constantemente y revisamos nuestras armas y armaduras para estar listos cuando llegue el combate.
+
 ## Despedida
 
 ENOL:
