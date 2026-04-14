@@ -13,7 +13,7 @@ Lugar: Escandinavia (actual Noruega, Suecia y Dinamarca)
 Personaje histórico: Guerrero vikingo
 Ocupación: Guerrero y explorador vikingo
 
-## INTRODUCCIÓN
+## Introducción
 
 JORGE:
 Hola a todos. Hoy hemos viajado al pasado hasta la época de los vikingos, alrededor del siglo IX.
@@ -21,7 +21,7 @@ Hola a todos. Hoy hemos viajado al pasado hasta la época de los vikingos, alred
 JORGE:
 Nos encontramos en un poblado vikingo, donde vamos a hablar con uno de sus guerreros.
 
-## ENTREVISTA
+## Entrevista
 
 JORGE:
 Saludos, guerrero vikingo. ¿Quién eres y cuál es tu papel en tu pueblo?
@@ -35,7 +35,7 @@ JORGE:
 VIKINGO:
 Hemos navegado a lugares lejanos como Inglaterra, Francia y otras tierras desconocidas en busca de riquezas y nuevas oportunidades.
 
-## DESPEDIDA
+## Despedida
 
 JORGE:
 Gracias por compartir tu experiencia con nosotros. Ha sido muy interesante conocer la vida de un vikingo.
