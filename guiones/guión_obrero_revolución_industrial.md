@@ -35,6 +35,12 @@ ENOL:
 OBRERO:
 La vida es dura. Trabajamos largas jornadas en condiciones difíciles, con mucho ruido y poco descanso.
 
+ENOL: 
+¿Existen peligros trabajando en la fábrica?
+
+OBRERO: 
+Sí, las máquinas pueden ser peligrosas y muchos trabajadores sufren accidentes debido a las duras condiciones.
+
 ## Despedida
 
 ENOL:
