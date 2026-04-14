@@ -35,6 +35,12 @@ JORGE:
 TESTIGO:
 Muchos estaban sorprendidos y nerviosos, pero también felices por haber logrado un viaje tan importante.
 
+JORGE: 
+¿Qué pensaste cuando pisaste tierra por primera vez?
+
+TESTIGO: 
+Sentí mucha curiosidad y sorpresa, porque sabíamos que estábamos viviendo un momento muy importante.
+
 ## Despedida
 
 JORGE:
