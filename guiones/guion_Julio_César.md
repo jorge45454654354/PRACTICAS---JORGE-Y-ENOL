@@ -35,6 +35,12 @@ ENOL:
 JULIO CÉSAR:
 Mi mayor logro ha sido expandir los territorios de Roma y fortalecer su poder frente a sus enemigos.
 
+ENOL: 
+¿Qué cambios importantes hiciste en Roma durante tu gobierno?
+
+JULIO CÉSAR: 
+Realicé reformas en el calendario, mejoré la organización del gobierno y ayudé a los ciudadanos más pobres.
+
 ## Despedida
 
 ENOL:
