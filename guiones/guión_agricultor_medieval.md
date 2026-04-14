@@ -35,6 +35,12 @@ ENOL:
 AGRICULTOR:
 Mi día comienza muy temprano. Trabajo en el campo durante muchas horas y dependo del clima para tener buenas cosechas.
 
+ENOL: 
+¿Qué ocurre si el clima es malo y las cosechas fallan?
+
+AGRICULTOR: 
+Si el clima es malo, podemos perder las cosechas y pasar hambre, por eso dependemos mucho del tiempo.
+
 ## Despedida
 
 ENOL:
