@@ -14,27 +14,27 @@ Ocupación: Guerrero al servicio de un rey o señor feudal
 
 ## Introducción
 
-ENOL:
+JORGE:
 Hola a todos. Hoy hemos viajado al pasado hasta la Edad Media, alrededor del siglo XIII.
 
-ENOL:
+JORGE:
 Nos encontramos frente a un castillo medieval, donde vamos a hablar con uno de sus caballeros.
 
 ## Entrevista
 
-ENOL:
+JORGE:
 Saludos, caballero. ¿Cuál es tu función dentro del reino?
 
 CABALLERO:
 Soy un caballero al servicio de mi señor. Mi deber es proteger el castillo, defender las tierras y luchar en las batallas cuando es necesario.
 
-ENOL:
+JORGE:
 ¿Qué armas utilizas normalmente en combate?
 
 CABALLERO:
 Utilizo espada, escudo y armadura para protegerme. También entrenamos constantemente para estar preparados para la guerra.
 
-ENOL: 
+JORGE: 
 ¿Cómo te preparas antes de una batalla?
 
 CABALLERO: 
@@ -42,6 +42,6 @@ Entrenamos constantemente y revisamos nuestras armas y armaduras para estar list
 
 ## Despedida
 
-ENOL:
+JORGE:
 Gracias por compartir tu experiencia con nosotros. Ha sido muy interesante conocer la vida de un caballero medieval.
 
