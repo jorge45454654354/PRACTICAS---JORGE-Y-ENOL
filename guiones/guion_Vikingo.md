@@ -1,4 +1,4 @@
-# GUIÓN – ENTREVISTA A UN VIKINGO
+# GUION – ENTREVISTA A UN VIKINGO
 
 Duración estimada: 40–45 segundos
 
