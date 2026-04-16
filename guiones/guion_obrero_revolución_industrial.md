@@ -15,27 +15,27 @@ Ocupación: Trabajador en fábricas textiles o metalúrgicas
 
 ## Introducción
 
-ENOL:
+JORGE:
 Hola a todos. Hoy hemos viajado al pasado hasta la Revolución Industrial, alrededor del siglo XIX.
 
-ENOL:
+JORGE:
 Nos encontramos dentro de una fábrica, donde vamos a hablar con uno de sus trabajadores.
 
 ## Entrevista
 
-ENOL:
+JORGE:
 Saludos. ¿Cuál es tu trabajo dentro de la fábrica?
 
 OBRERO:
 Soy obrero y trabajo muchas horas manejando máquinas que producen telas y otros productos para la industria.
 
-ENOL:
+JORGE:
 ¿Cómo es la vida diaria trabajando en estas fábricas?
 
 OBRERO:
 La vida es dura. Trabajamos largas jornadas en condiciones difíciles, con mucho ruido y poco descanso.
 
-ENOL: 
+JORGE: 
 ¿Existen peligros trabajando en la fábrica?
 
 OBRERO: 
@@ -43,6 +43,6 @@ Sí, las máquinas pueden ser peligrosas y muchos trabajadores sufren accidentes
 
 ## Despedida
 
-ENOL:
+JORGE:
 Gracias por compartir tu experiencia con nosotros. Ha sido muy interesante conocer la vida de un obrero en esta época.
 
