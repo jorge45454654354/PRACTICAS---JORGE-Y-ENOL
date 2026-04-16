@@ -15,27 +15,27 @@ Ocupación: Soldado del ejército de Napoleón Bonaparte
 
 ## Introducción
 
-JORGE:
+ENOL:
 Hola a todos. Hoy hemos viajado al pasado hasta comienzos del siglo XIX, durante las guerras napoleónicas.
 
-JORGE:
+ENOL:
 Nos encontramos en medio de una batalla donde vamos a hablar con un soldado del ejército napoleónico.
 
 ## Entrevista
 
-JORGE:
+ENOL:
 Saludos, soldado. ¿Cuál es tu función dentro del ejército?
 
 SOLDADO:
 Soy un soldado del ejército de Napoleón. Mi función es luchar en las batallas y seguir las órdenes de mis superiores.
 
-JORGE:
+ENOL:
 ¿Cómo es la vida de un soldado en estas guerras?
 
 SOLDADO:
 La vida es dura. Caminamos largas distancias, entrenamos constantemente y debemos estar preparados para combatir en cualquier momento.
 
-JORGE: 
+ENOL: 
 ¿Qué sientes antes de entrar en una batalla?
 
 SOLDADO: 
@@ -43,6 +43,6 @@ Siento miedo, pero también valentía, porque debo luchar junto a mis compañero
 
 ## Despedida
 
-JORGE:
+ENOL:
 Gracias por compartir tu experiencia con nosotros. Ha sido muy interesante conocer la vida de un soldado en esta época.
 
