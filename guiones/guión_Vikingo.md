@@ -53,4 +53,3 @@ Ahora veremos desde arriba cómo es una aldea vikinga a través de nuestro dron.
 
 JORGE:
 ¡Gracias por acompañarnos en este reportaje! Nos vemos en el próximo. ¡Hasta pronto, von Alikseros!
-
