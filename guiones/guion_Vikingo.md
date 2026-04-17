@@ -16,7 +16,7 @@ Ocupación: Guerrero y explorador vikingo
 ## Introducción
 
 JORGE:
-Qué pasa von Alikseros, estamos en otro reportaje del tiempo.
+Qué pasa von Alikseros, estamos en otro reportaje a través del tiempo
 
 ## Entrevista
 
