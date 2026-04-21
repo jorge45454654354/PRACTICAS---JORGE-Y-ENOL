@@ -1,37 +1,34 @@
-# GUION – JULIO CÉSAR 
-## Título
-
-Entrevistamos a Julio César en su palacio
+# GUIÓN – JULIO CÉSAR 
 
 ## Introducción
 
 ENOL:
-Qué pasa von Alikseros, estamos en otro reportaje a través del tiempo. Soy Enol Cienfuegos y hoy hemos viajado hasta la antigua Roma, en el año 44 antes de Cristo.
+Qué pasa von Alikseros, estamos en otro reportaje a través del tiempo. Hoy viajamos hasta Roma, en el año 44 antes de Cristo.
 
 ENOL:
-Nos encontramos en el palacio de uno de los líderes más importantes de la historia: Julio César.
+Estamos en el palacio de Julio César, uno de los líderes más importantes de la historia.
 
 ## Entrevista
 
 ENOL:
-Salve, Julio César. ¿Podrías presentarte y decirnos cuál es tu función en Roma?
+Salve, Julio César. ¿Quién eres y cuál es tu función?
 
 JULIO CÉSAR:
-Salve. Mi nombre es Cayo Julio César y soy el dictador de Roma. Mi deber es gobernar la ciudad y dirigir a nuestros ejércitos para proteger el Imperio.
+Soy Julio César, dictador de Roma. Mi deber es gobernar y dirigir a nuestros ejércitos.
 
 ENOL:
-¿Cuál ha sido tu mayor logro como líder?
+¿Cuál ha sido tu mayor logro?
 
 JULIO CÉSAR:
-Mi mayor logro ha sido expandir los territorios de Roma y fortalecer su poder frente a otros pueblos, haciendo que Roma sea cada vez más fuerte.
+He expandido los territorios de Roma y fortalecido su poder frente a otros pueblos.
 
 ENOL:
-¿Qué cambios importantes hiciste durante tu gobierno?
+¿Qué cambios hiciste en Roma?
 
 JULIO CÉSAR:
-Reformé el calendario, mejoré la organización del gobierno y ayudé a los ciudadanos más pobres para que Roma funcionara mejor.
+Reformé el calendario y mejoré el gobierno para ayudar a los ciudadanos.
 
 ## Despedida
 
 ENOL:
-Gracias por compartir tu experiencia con nosotros. Nos vemos en el próximo reportaje histórico.
+Gracias por esta entrevista, Julio César. Nos vemos en el próximo reportaje histórico.
