@@ -1,4 +1,4 @@
-# GUION – ENTREVISTA A JULIO CÉSAR (≈1:20–1:40)
+# GUION – ENTREVISTA A JULIO CÉSAR 
 ## Título
 
 Entrevistamos a Julio César en su palacio
