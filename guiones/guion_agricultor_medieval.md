@@ -1,7 +1,5 @@
 # GUION – ENTREVISTA A UN AGRICULTOR MEDIEVAL
 
-Duración estimada: 40–45 segundos
-
 ## Título
 
 Entrevistamos a un agricultor medieval en su aldea
