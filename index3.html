@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Noticias Históricas — Reportajes con IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap%22 rel="stylesheet">
+<style>
+ 
+    /* ============================
+ 
+       VARIABLES & RESET
+ 
+    ============================= */
+ 
+    :root {
+ 
+      --navy:       #0a1628;
+ 
+      --navy-mid:   #112040;
+ 
+      --navy-light: #1a3260;
+ 
+      --gold:       #c9a84c;
+ 
+      --gold-light: #e8c97a;
+ 
+      --white:      #f8f6f1;
+ 
+      --gray-light: #e8e4dc;
+ 
+      --gray-text:  #8a8a9a;
+ 
+      --accent:     #e05a2b;
+ 
+      --card-bg:    #ffffff;
+ 
+      --shadow:     0 8px 32px rgba(10,22,40,.13);
+ 
+      --radius:     14px;
+ 
+    }
+ 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      background: var(--white);
+ 
+      color: var(--navy);
+ 
+      overflow-x: hidden;
+ 
+    }
+ 
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.18; }
+ 
+    a { text-decoration: none; color: inherit; }
+ 
+    img { display: block; width: 100%; }
+ 
+    section { padding: 96px 0; }
+ 
+    .container {
+ 
+      max-width: 1160px;
+ 
+      margin: 0 auto;
+ 
+      padding: 0 28px;
+ 
+    }
+ 
+    .section-label {
+ 
+      display: inline-block;
+ 
+      font-size: 11px;
+ 
+      font-weight: 600;
+ 
+      letter-spacing: 3px;
+ 
+      text-transform: uppercase;
+ 
+      color: var(--gold);
+ 
+      background: rgba(201,168,76,.1);
+ 
+      border: 1px solid rgba(201,168,76,.3);
+ 
+      border-radius: 30px;
+ 
+      padding: 5px 16px;
+ 
+      margin-bottom: 20px;
+ 
+    }
+ 
+    .section-title {
+ 
+      font-size: clamp(2rem, 4vw, 3rem);
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 18px;
+ 
+    }
+ 
+    .section-sub {
+ 
+      font-size: 1.08rem;
+ 
+      color: var(--gray-text);
+ 
+      max-width: 620px;
+ 
+      line-height: 1.75;
+ 
+    }
+ 
+    .btn {
+ 
+      display: inline-flex;
+ 
+      align-items: center;
+ 
+      gap: 8px;
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: .95rem;
+ 
+      font-weight: 600;
+ 
+      padding: 14px 32px;
+ 
+      border-radius: 50px;
+ 
+      cursor: pointer;
+ 
+      transition: all .28s ease;
+ 
+      border: none;
+ 
+    }
+ 
+    .btn-primary {
+ 
+      background: var(--gold);
+ 
+      color: var(--navy);
+ 
+    }
+ 
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.35); }
+ 
+    .btn-outline {
+ 
+      background: transparent;
+ 
+      color: var(--gold);
+ 
+      border: 2px solid var(--gold);
+ 
+    }
+ 
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+ 
+    .btn-dark {
+ 
+      background: var(--navy);
+ 
+      color: var(--white);
+ 
+    }
+ 
+    .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
+ 
+    /* Botón YouTube */
+.btn-youtube {
+  background: #000000;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.btn-youtube:hover {
+  background: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,0,0,.35);
+}
+ 
+    /* ============================
+ 
+       HEADER / NAV
+ 
+    ============================= */
+ 
+    header {
+ 
+      position: fixed;
+ 
+      top: 0; left: 0; right: 0;
+ 
+      z-index: 1000;
+ 
+      background: rgba(10,22,40,.97);
+ 
+      backdrop-filter: blur(12px);
+ 
+      border-bottom: 1px solid rgba(201,168,76,.15);
+ 
+    }
+ 
+    nav {
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      justify-content: space-between;
+ 
+      height: 72px;
+ 
+      max-width: 1160px;
+ 
+      margin: 0 auto;
+ 
+      padding: 0 28px;
+ 
+    }
+ 
+    .logo {
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      gap: 12px;
+ 
+    }
+ 
+    .logo-icon {
+ 
+      width: 40px; height: 40px;
+ 
+      background: var(--gold);
+ 
+      border-radius: 8px;
+ 
+      display: grid;
+ 
+      place-items: center;
+ 
+      font-size: 20px;
+ 
+    }
+ 
+    .logo-text {
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      font-size: 1.25rem;
+ 
+      font-weight: 700;
+ 
+      color: var(--white);
+ 
+      line-height: 1.1;
+ 
+    }
+ 
+    .logo-text span {
+ 
+      display: block;
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: .65rem;
+ 
+      font-weight: 400;
+ 
+      letter-spacing: 2.5px;
+ 
+      text-transform: uppercase;
+ 
+      color: var(--gold);
+ 
+    }
+ 
+    .nav-links {
+ 
+      display: flex;
+ 
+      list-style: none;
+ 
+      gap: 36px;
+ 
+    }
+ 
+    .nav-links a {
+ 
+      font-size: .9rem;
+ 
+      font-weight: 500;
+ 
+      color: rgba(248,246,241,.75);
+ 
+      transition: color .2s;
+ 
+      position: relative;
+ 
+    }
+ 
+    .nav-links a::after {
+ 
+      content: '';
+ 
+      position: absolute;
+ 
+      bottom: -4px; left: 0; right: 0;
+ 
+      height: 2px;
+ 
+      background: var(--gold);
+ 
+      transform: scaleX(0);
+ 
+      transition: transform .25s;
+ 
+      border-radius: 2px;
+ 
+    }
+ 
+    .nav-links a:hover { color: var(--white); }
+ 
+    .nav-links a:hover::after { transform: scaleX(1); }
+ 
+    .hamburger {
+ 
+      display: none;
+ 
+      flex-direction: column;
+ 
+      gap: 5px;
+ 
+      cursor: pointer;
+ 
+      padding: 6px;
+ 
+    }
+ 
+    .hamburger span {
+ 
+      display: block;
+ 
+      width: 24px; height: 2px;
+ 
+      background: var(--gold);
+ 
+      border-radius: 2px;
+ 
+      transition: .3s;
+ 
+    }
+ 
+    /* ============================
+ 
+       HERO
+ 
+    ============================= */
+ 
+    .hero {
+ 
+      min-height: 100vh;
+ 
+      background: var(--navy);
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      position: relative;
+ 
+      overflow: hidden;
+ 
+      padding-top: 72px;
+ 
+    }
+ 
+    /* Decorative grid lines */
+ 
+    .hero::before {
+ 
+      content: '';
+ 
+      position: absolute;
+ 
+      inset: 0;
+ 
+      background-image:
+ 
+        linear-gradient(rgba(201,168,76,.05) 1px, transparent 1px),
+ 
+        linear-gradient(90deg, rgba(201,168,76,.05) 1px, transparent 1px);
+ 
+      background-size: 60px 60px;
+ 
+    }
+ 
+    /* Glow blobs */
+ 
+    .hero-blob {
+ 
+      position: absolute;
+ 
+      border-radius: 50%;
+ 
+      filter: blur(90px);
+ 
+      opacity: .18;
+ 
+      pointer-events: none;
+ 
+    }
+ 
+    .hero-blob-1 { width: 560px; height: 560px; background: #2a6099; top: -100px; right: -80px; }
+ 
+    .hero-blob-2 { width: 360px; height: 360px; background: var(--gold); bottom: -80px; left: 10%; }
+ 
+    .hero-inner {
+ 
+      position: relative;
+ 
+      z-index: 1;
+ 
+      display: grid;
+ 
+      grid-template-columns: 1fr 1fr;
+ 
+      gap: 72px;
+ 
+      align-items: center;
+ 
+      max-width: 1160px;
+ 
+      margin: 0 auto;
+ 
+      padding: 72px 28px;
+ 
+    }
+ 
+    .hero-badge {
+ 
+      display: inline-flex;
+ 
+      align-items: center;
+ 
+      gap: 8px;
+ 
+      background: rgba(201,168,76,.12);
+ 
+      border: 1px solid rgba(201,168,76,.3);
+ 
+      border-radius: 30px;
+ 
+      padding: 6px 16px 6px 10px;
+ 
+      margin-bottom: 28px;
+ 
+    }
+ 
+    .hero-badge-dot {
+ 
+      width: 8px; height: 8px;
+ 
+      background: var(--gold);
+ 
+      border-radius: 50%;
+ 
+      animation: pulse 2s infinite;
+ 
+    }
+ 
+    @keyframes pulse {
+ 
+      0%, 100% { opacity: 1; transform: scale(1); }
+ 
+      50% { opacity: .5; transform: scale(1.4); }
+ 
+    }
+ 
+    .hero-badge span {
+ 
+      font-size: .8rem;
+ 
+      font-weight: 500;
+ 
+      color: var(--gold);
+ 
+      letter-spacing: 1px;
+ 
+    }
+ 
+    .hero h1 {
+ 
+      font-size: clamp(2.4rem, 5vw, 3.9rem);
+ 
+      color: var(--white);
+ 
+      margin-bottom: 24px;
+ 
+      line-height: 1.12;
+ 
+    }
+ 
+    .hero h1 em {
+ 
+      font-style: normal;
+ 
+      color: var(--gold);
+ 
+    }
+ 
+    .hero-sub {
+ 
+      font-size: 1.1rem;
+ 
+      color: rgba(248,246,241,.72);
+ 
+      line-height: 1.8;
+ 
+      margin-bottom: 40px;
+ 
+      max-width: 500px;
+ 
+    }
+ 
+    .hero-actions {
+ 
+      display: flex;
+ 
+      gap: 16px;
+ 
+      flex-wrap: wrap;
+ 
+    }
+ 
+    /* Hero visual */
+ 
+    .hero-visual {
+ 
+      position: relative;
+ 
+    }
+ 
+    .hero-card-stack {
+ 
+      position: relative;
+ 
+      height: 480px;
+ 
+    }
+ 
+    .hero-card {
+ 
+      position: absolute;
+ 
+      border-radius: 20px;
+ 
+      overflow: hidden;
+ 
+      box-shadow: 0 32px 80px rgba(0,0,0,.5);
+ 
+    }
+ 
+    .hero-card-main {
+ 
+      width: 280px; height: 360px;
+ 
+      top: 50%; left: 50%;
+ 
+      transform: translate(-50%, -50%);
+ 
+      background: linear-gradient(145deg, #1e3a6e, #0d2347);
+ 
+      border: 1px solid rgba(201,168,76,.25);
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      align-items: center;
+ 
+      justify-content: flex-end;
+ 
+      padding: 24px;
+ 
+    }
+ 
+    .hero-portrait {
+ 
+      position: absolute;
+ 
+      top: 0; left: 0; right: 0; bottom: 0;
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      justify-content: center;
+ 
+      font-size: 120px;
+ 
+      opacity: .3;
+ 
+    }
+ 
+    .hero-card-info {
+ 
+      position: relative;
+ 
+      z-index: 1;
+ 
+      text-align: center;
+ 
+    }
+ 
+    .hero-card-info h4 {
+ 
+      font-size: 1.25rem;
+ 
+      color: var(--white);
+ 
+      margin-bottom: 4px;
+ 
+    }
+ 
+    .hero-card-info p {
+ 
+      font-size: .8rem;
+ 
+      color: var(--gold);
+ 
+      font-weight: 500;
+ 
+      letter-spacing: 1.5px;
+ 
+      text-transform: uppercase;
+ 
+    }
+ 
+    .hero-card-sm {
+ 
+      width: 160px; height: 200px;
+ 
+      background: linear-gradient(145deg, #162d52, #0c1e3a);
+ 
+      border: 1px solid rgba(201,168,76,.18);
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      align-items: center;
+ 
+      justify-content: center;
+ 
+      gap: 10px;
+ 
+    }
+ 
+    .hero-card-sm span { font-size: 48px; }
+ 
+    .hero-card-sm p { font-size: .75rem; color: rgba(248,246,241,.65); text-align: center; padding: 0 12px; }
+ 
+    .hero-card-a {
+ 
+      top: 30px; left: -20px;
+ 
+      transform: rotate(-6deg);
+ 
+    }
+ 
+    .hero-card-b {
+ 
+      bottom: 30px; right: -20px;
+ 
+      transform: rotate(5deg);
+ 
+    }
+ 
+    /* Floating tags */
+ 
+    .floating-tag {
+ 
+      position: absolute;
+ 
+      background: rgba(201,168,76,.15);
+ 
+      border: 1px solid rgba(201,168,76,.35);
+ 
+      border-radius: 30px;
+ 
+      padding: 6px 14px;
+ 
+      font-size: .75rem;
+ 
+      font-weight: 600;
+ 
+      color: var(--gold);
+ 
+      white-space: nowrap;
+ 
+      animation: float 3.5s ease-in-out infinite;
+ 
+    }
+ 
+    .floating-tag-1 { top: 60px; right: 0; animation-delay: 0s; }
+ 
+    .floating-tag-2 { bottom: 80px; left: 0; animation-delay: 1.5s; }
+ 
+    @keyframes float {
+ 
+      0%, 100% { transform: translateY(0); }
+ 
+      50% { transform: translateY(-10px); }
+ 
+    }
+ 
+    /* Stats bar */
+ 
+    .hero-stats {
+ 
+      position: absolute;
+ 
+      bottom: 0; left: 0; right: 0;
+ 
+      background: rgba(10,22,40,.85);
+ 
+      backdrop-filter: blur(12px);
+ 
+      border-top: 1px solid rgba(201,168,76,.12);
+ 
+      padding: 20px 0;
+ 
+    }
+ 
+    .hero-stats-inner {
+ 
+      max-width: 1160px;
+ 
+      margin: 0 auto;
+ 
+      padding: 0 28px;
+ 
+      display: flex;
+ 
+      gap: 48px;
+ 
+      flex-wrap: wrap;
+ 
+    }
+ 
+    .stat {
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      gap: 12px;
+ 
+    }
+ 
+    .stat-num {
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      font-size: 1.8rem;
+ 
+      color: var(--gold);
+ 
+      font-weight: 700;
+ 
+    }
+ 
+    .stat-label {
+ 
+      font-size: .8rem;
+ 
+      color: rgba(248,246,241,.6);
+ 
+      line-height: 1.3;
+ 
+      font-weight: 400;
+ 
+    }
+ 
+    /* ============================
+ 
+       PROYECTO
+ 
+    ============================= */
+ 
+    .proyecto {
+ 
+      background: var(--white);
+ 
+    }
+ 
+    .proyecto-grid {
+ 
+      display: grid;
+ 
+      grid-template-columns: 1fr 1fr;
+ 
+      gap: 80px;
+ 
+      align-items: center;
+ 
+      margin-top: 56px;
+ 
+    }
+ 
+ 
+    .proyecto-features {
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      gap: 24px;
+ 
+    }
+ 
+    .feature-item {
+ 
+      display: flex;
+ 
+      gap: 20px;
+ 
+      align-items: flex-start;
+ 
+    }
+ 
+    .feature-icon {
+ 
+      width: 52px; height: 52px;
+ 
+      min-width: 52px;
+ 
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+ 
+      border-radius: 14px;
+ 
+      display: grid;
+ 
+      place-items: center;
+ 
+      font-size: 22px;
+ 
+      box-shadow: 0 6px 20px rgba(10,22,40,.18);
+ 
+    }
+ 
+    .feature-text h4 {
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: 1rem;
+ 
+      font-weight: 600;
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 4px;
+ 
+    }
+ 
+    .feature-text p {
+ 
+      font-size: .9rem;
+ 
+      color: var(--gray-text);
+ 
+      line-height: 1.65;
+ 
+    }
+ 
+    .proyecto-visual {
+ 
+      position: relative;
+ 
+    }
+ 
+    .proyecto-mockup {
+ 
+      background: var(--navy);
+ 
+      border-radius: 20px;
+ 
+      overflow: hidden;
+ 
+      box-shadow: var(--shadow);
+ 
+      border: 1px solid rgba(201,168,76,.15);
+ 
+    }
+ 
+    .mockup-bar {
+ 
+      background: var(--navy-mid);
+ 
+      padding: 14px 20px;
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      gap: 8px;
+ 
+      border-bottom: 1px solid rgba(255,255,255,.06);
+ 
+    }
+ 
+    .mockup-dot {
+ 
+      width: 12px; height: 12px;
+ 
+      border-radius: 50%;
+ 
+    }
+ 
+    .d-red { background: #e05a2b; }
+ 
+    .d-yellow { background: var(--gold); }
+ 
+    .d-green { background: #2bb55a; }
+ 
+    .mockup-body {
+ 
+      padding: 32px;
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      gap: 16px;
+ 
+    }
+ 
+    .mockup-line {
+ 
+      height: 10px;
+ 
+      background: rgba(255,255,255,.07);
+ 
+      border-radius: 6px;
+ 
+    }
+ 
+    .mockup-line-short { width: 55%; }
+ 
+    .mockup-line-long { width: 90%; }
+ 
+    .mockup-line-med { width: 72%; }
+ 
+    .mockup-person {
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      gap: 16px;
+ 
+      background: rgba(201,168,76,.07);
+ 
+      border: 1px solid rgba(201,168,76,.15);
+ 
+      border-radius: 12px;
+ 
+      padding: 16px;
+ 
+      margin-top: 8px;
+ 
+    }
+ 
+    .mockup-avatar {
+ 
+      width: 56px; height: 56px;
+ 
+      background: var(--navy-light);
+ 
+      border-radius: 12px;
+ 
+      display: grid;
+ 
+      place-items: center;
+ 
+      font-size: 28px;
+ 
+      border: 1px solid rgba(201,168,76,.2);
+ 
+    }
+ 
+    .mockup-person-text { flex: 1; }
+ 
+    .mockup-person-text strong {
+ 
+      display: block;
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      color: var(--white);
+ 
+      font-size: 1rem;
+ 
+      margin-bottom: 4px;
+ 
+    }
+ 
+    .mockup-person-text span {
+ 
+      font-size: .8rem;
+ 
+      color: var(--gold);
+ 
+      font-weight: 500;
+ 
+    }
+ 
+    .mockup-wave {
+ 
+      display: flex;
+ 
+      align-items: flex-end;
+ 
+      gap: 3px;
+ 
+      height: 36px;
+ 
+      padding: 0 12px;
+ 
+    }
+ 
+    .wave-bar {
+ 
+      width: 4px;
+ 
+      background: var(--gold);
+ 
+      border-radius: 2px;
+ 
+      opacity: .7;
+ 
+      animation: wave 1.2s ease-in-out infinite;
+ 
+    }
+ 
+    @keyframes wave {
+ 
+      0%, 100% { height: 8px; }
+ 
+      50% { height: 28px; }
+ 
+    }
+ 
+    /* Decor badge */
+ 
+    .proyecto-badge {
+ 
+      position: absolute;
+ 
+      top: -18px; right: -18px;
+ 
+      background: var(--gold);
+ 
+      color: var(--navy);
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      font-size: 1rem;
+ 
+      font-weight: 700;
+ 
+      width: 90px; height: 90px;
+ 
+      border-radius: 50%;
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      align-items: center;
+ 
+      justify-content: center;
+ 
+      box-shadow: 0 8px 28px rgba(201,168,76,.4);
+ 
+      text-align: center;
+ 
+      line-height: 1.2;
+ 
+    }
+ 
+    .proyecto-badge small {
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: .65rem;
+ 
+      font-weight: 600;
+ 
+      letter-spacing: 1px;
+ 
+      text-transform: uppercase;
+ 
+    }
+ 
+    /* ============================
+ 
+       REPORTAJES
+ 
+    ============================= */
+ 
+    .reportajes {
+ 
+      background: #f0eee8;
+ 
+    }
+ 
+    .reportajes-header {
+ 
+      display: flex;
+ 
+      justify-content: space-between;
+ 
+      align-items: flex-end;
+ 
+      margin-bottom: 56px;
+ 
+      flex-wrap: wrap;
+ 
+      gap: 24px;
+ 
+    }
+ 
+    .cards-grid {
+ 
+      display: grid;
+ 
+      grid-template-columns: repeat(4, 1fr);
+ 
+      gap: 24px;
+ 
+    }
+ 
+    .card {
+ 
+      background: var(--card-bg);
+ 
+      border-radius: var(--radius);
+ 
+      overflow: hidden;
+ 
+      box-shadow: var(--shadow);
+ 
+      transition: transform .3s ease, box-shadow .3s ease;
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+      border: 1px solid rgba(10,22,40,.06);
+ 
+    }
+ 
+    .card:hover {
+ 
+      transform: translateY(-8px);
+ 
+      box-shadow: 0 20px 56px rgba(10,22,40,.18);
+ 
+    }
+ 
+    .card-img {
+ 
+      height: 200px;
+ 
+      background: var(--navy);
+ 
+      position: relative;
+ 
+      overflow: hidden;
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      justify-content: center;
+ 
+    }
+ 
+    .card-img-bg {
+ 
+      position: absolute;
+ 
+      inset: 0;
+ 
+      opacity: .25;
+ 
+      background-size: cover;
+ 
+      background-position: center;
+ 
+      filter: blur(2px);
+ 
+    }
+ 
+    /* ── ZOOM DEL EMOJI AL HACER HOVER EN LA CARD ── */
+    .card-emoji {
+ 
+      font-size: 72px;
+ 
+      position: relative;
+ 
+      z-index: 1;
+ 
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,.4));
+ 
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1), filter .4s ease;
+ 
+    }
+ 
+    .card:hover .card-emoji {
+ 
+      transform: scale(1.35);
+ 
+      filter: drop-shadow(0 8px 28px rgba(0,0,0,.6));
+ 
+    }
+ 
+    /* ── ZOOM DEL FONDO DE LA IMAGEN AL HACER HOVER ── */
+    .card-img::after {
+ 
+      content: '';
+ 
+      position: absolute;
+ 
+      inset: 0;
+ 
+      background: rgba(201,168,76,0);
+ 
+      transition: background .35s ease;
+ 
+    }
+ 
+    .card:hover .card-img::after {
+ 
+      background: rgba(201,168,76,.08);
+ 
+    }
+ 
+    /* Zoom suave del bloque card-img completo */
+    .card-img {
+ 
+      transition: transform .4s ease;
+ 
+    }
+ 
+    .card:hover .card-img {
+ 
+      transform: scale(1.04);
+ 
+    }
+ 
+    .card-era {
+ 
+      position: absolute;
+ 
+      top: 12px; left: 12px;
+ 
+      background: rgba(10,22,40,.8);
+ 
+      backdrop-filter: blur(6px);
+ 
+      color: var(--gold);
+ 
+      font-size: .7rem;
+ 
+      font-weight: 600;
+ 
+      letter-spacing: 1.5px;
+ 
+      text-transform: uppercase;
+ 
+      padding: 4px 12px;
+ 
+      border-radius: 20px;
+ 
+      border: 1px solid rgba(201,168,76,.3);
+ 
+      z-index: 2;
+ 
+    }
+ 
+    .card-body {
+ 
+      padding: 22px;
+ 
+      flex: 1;
+ 
+      display: flex;
+ 
+      flex-direction: column;
+ 
+    }
+ 
+    .card-body h3 {
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      font-size: 1.15rem;
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 8px;
+ 
+    }
+ 
+    .card-body p {
+ 
+      font-size: .875rem;
+ 
+      color: var(--gray-text);
+ 
+      line-height: 1.65;
+ 
+      flex: 1;
+ 
+      margin-bottom: 18px;
+ 
+    }
+ 
+    .card-btn {
+ 
+      display: inline-flex;
+ 
+      align-items: center;
+ 
+      gap: 6px;
+ 
+      font-size: .82rem;
+ 
+      font-weight: 600;
+ 
+      color: var(--navy);
+ 
+      border: 1.5px solid var(--navy);
+ 
+      border-radius: 30px;
+ 
+      padding: 8px 18px;
+ 
+      transition: all .25s;
+ 
+      align-self: flex-start;
+ 
+    }
+ 
+    .card-btn:hover {
+ 
+      background: var(--navy);
+ 
+      color: var(--white);
+ 
+      gap: 10px;
+ 
+    }
+ 
+    /* ============================
+ 
+       TECNOLOGÍA
+ 
+    ============================= */
+ 
+    .tecnologia {
+ 
+      background: var(--navy);
+ 
+      position: relative;
+ 
+      overflow: hidden;
+ 
+    }
+ 
+    .tecnologia::before {
+ 
+      content: '';
+ 
+      position: absolute;
+ 
+      inset: 0;
+ 
+      background-image:
+ 
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+ 
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+ 
+      background-size: 48px 48px;
+ 
+    }
+ 
+    .tecnologia .section-label { color: var(--gold); }
+ 
+    .tecnologia .section-title { color: var(--white); }
+ 
+    .tecnologia .section-sub { color: rgba(248,246,241,.65); }
+ 
+    .tec-header { margin-bottom: 64px; }
+ 
+    .tec-grid {
+ 
+      display: grid;
+ 
+      grid-template-columns: repeat(5, 1fr);
+ 
+      gap: 20px;
+ 
+      position: relative;
+ 
+      z-index: 1;
+ 
+    }
+ 
+    .tec-card {
+ 
+      background: rgba(255,255,255,.04);
+ 
+      border: 1px solid rgba(201,168,76,.15);
+ 
+      border-radius: 16px;
+ 
+      padding: 32px 20px;
+ 
+      text-align: center;
+ 
+      transition: all .3s ease;
+ 
+    }
+ 
+    .tec-card:hover {
+ 
+      background: rgba(201,168,76,.08);
+ 
+      border-color: rgba(201,168,76,.4);
+ 
+      transform: translateY(-6px);
+ 
+    }
+ 
+    .tec-icon {
+ 
+      font-size: 40px;
+ 
+      margin-bottom: 16px;
+ 
+      display: block;
+ 
+    }
+ 
+    .tec-card h4 {
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: .95rem;
+ 
+      font-weight: 600;
+ 
+      color: var(--white);
+ 
+      margin-bottom: 10px;
+ 
+    }
+ 
+    .tec-card p {
+ 
+      font-size: .8rem;
+ 
+      color: rgba(248,246,241,.55);
+ 
+      line-height: 1.6;
+ 
+    }
+ 
+    .tec-card-num {
+ 
+      font-family: 'Playfair Display', serif;
+ 
+      font-size: 3rem;
+ 
+      color: rgba(201,168,76,.15);
+ 
+      font-weight: 700;
+ 
+      margin-bottom: 4px;
+ 
+    }
+ 
+    /* ============================
+ 
+       EQUIPO
+ 
+    ============================= */
+ 
+    .equipo {
+ 
+      background: var(--white);
+ 
+    }
+ 
+    .equipo-grid {
+ 
+      display: grid;
+ 
+      grid-template-columns: repeat(2, 1fr);
+ 
+      gap: 40px;
+ 
+      max-width: 720px;
+ 
+      margin: 56px auto 0;
+ 
+    }
+ 
+.team-card {
+ 
+      background: var(--card-bg);
+ 
+      border-radius: 20px;
+ 
+      padding: 40px 32px;
+ 
+      text-align: center;
+ 
+      box-shadow: var(--shadow);
+ 
+      border: 1px solid rgba(10,22,40,.06);
+ 
+      transition: transform .3s;
+ 
+      position: relative;
+ 
+      overflow: hidden;
+ 
+    }
+ 
+    .team-card::before {
+ 
+      content: '';
+ 
+      position: absolute;
+ 
+      top: 0; left: 0; right: 0;
+ 
+      height: 4px;
+ 
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+ 
+    }
+ 
+    .team-card:hover { transform: translateY(-6px); }
+ 
+    .team-avatar {
+ 
+      width: 100px; height: 100px;
+ 
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+ 
+      border-radius: 50%;
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      justify-content: center;
+ 
+      font-size: 44px;
+ 
+      margin: 0 auto 20px;
+ 
+      border: 3px solid rgba(201,168,76,.25);
+ 
+      box-shadow: 0 8px 24px rgba(10,22,40,.15);
+ 
+    }
+ 
+    .team-card h3 {
+ 
+      font-size: 1.35rem;
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 6px;
+ 
+    }
+ 
+    .team-card .role {
+ 
+      font-size: .85rem;
+ 
+      color: var(--gold);
+ 
+      font-weight: 600;
+ 
+      letter-spacing: 1px;
+ 
+      text-transform: uppercase;
+ 
+      margin-bottom: 16px;
+ 
+    }
+ 
+    .team-card p {
+ 
+      font-size: .9rem;
+ 
+      color: var(--gray-text);
+ 
+      line-height: 1.7;
+ 
+    }
+ 
+    /* ============================
+ 
+       CONTACTO
+ 
+    ============================= */
+ 
+    .contacto {
+ 
+      background: #f0eee8;
+ 
+    }
+ 
+    .contacto-inner {
+ 
+      display: grid;
+ 
+      grid-template-columns: 1fr 1.4fr;
+ 
+      gap: 80px;
+ 
+      align-items: flex-start;
+ 
+      margin-top: 56px;
+ 
+    }
+ 
+    .contacto-info h3 {
+ 
+      font-size: 1.6rem;
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 16px;
+ 
+    }
+ 
+    .contacto-info p {
+ 
+      color: var(--gray-text);
+ 
+      line-height: 1.75;
+ 
+      font-size: .95rem;
+ 
+      margin-bottom: 36px;
+ 
+    }
+ 
+    .contact-detail {
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      gap: 14px;
+ 
+      margin-bottom: 20px;
+ 
+    }
+ 
+    .contact-detail-icon {
+ 
+      width: 44px; height: 44px;
+ 
+      background: var(--navy);
+ 
+      border-radius: 12px;
+ 
+      display: grid;
+ 
+      place-items: center;
+ 
+      font-size: 20px;
+ 
+    }
+ 
+    .contact-detail-text strong {
+ 
+      display: block;
+ 
+      font-weight: 600;
+ 
+      color: var(--navy);
+ 
+      font-size: .9rem;
+ 
+    }
+ 
+    .contact-detail-text span {
+ 
+      font-size: .85rem;
+ 
+      color: var(--gray-text);
+ 
+    }
+ 
+    .form-box {
+ 
+      background: var(--white);
+ 
+      border-radius: 20px;
+ 
+      padding: 44px;
+ 
+      box-shadow: var(--shadow);
+ 
+      border: 1px solid rgba(10,22,40,.06);
+ 
+    }
+ 
+    .form-group {
+ 
+      margin-bottom: 22px;
+ 
+    }
+ 
+    .form-group label {
+ 
+      display: block;
+ 
+      font-size: .85rem;
+ 
+      font-weight: 600;
+ 
+      color: var(--navy);
+ 
+      margin-bottom: 8px;
+ 
+      letter-spacing: .3px;
+ 
+    }
+ 
+    .form-group input,
+ 
+    .form-group textarea,
+ 
+    .form-group select {
+ 
+      width: 100%;
+ 
+      padding: 13px 18px;
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: .95rem;
+ 
+      color: var(--navy);
+ 
+      background: #f8f6f1;
+ 
+      border: 1.5px solid #ddd9d1;
+ 
+      border-radius: 10px;
+ 
+      outline: none;
+ 
+      transition: border-color .2s, box-shadow .2s;
+ 
+    }
+ 
+    .form-group input:focus,
+ 
+    .form-group textarea:focus {
+ 
+      border-color: var(--navy);
+ 
+      box-shadow: 0 0 0 3px rgba(10,22,40,.07);
+ 
+    }
+ 
+    .form-group textarea {
+ 
+      resize: vertical;
+ 
+      min-height: 130px;
+ 
+    }
+ 
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+ 
+    .form-submit {
+ 
+      width: 100%;
+ 
+      padding: 15px;
+ 
+      font-family: 'DM Sans', sans-serif;
+ 
+      font-size: 1rem;
+ 
+      font-weight: 600;
+ 
+      background: var(--navy);
+ 
+      color: var(--white);
+ 
+      border: none;
+ 
+      border-radius: 10px;
+ 
+      cursor: pointer;
+ 
+      transition: background .25s, transform .2s;
+ 
+    }
+ 
+    .form-submit:hover { background: var(--navy-light); transform: translateY(-2px); }
+ 
+    /* ============================
+ 
+       FOOTER
+ 
+    ============================= */
+ 
+    footer {
+ 
+      background: var(--navy);
+ 
+      padding: 32px 0;
+ 
+      border-top: 1px solid rgba(201,168,76,.15);
+ 
+    }
+ 
+    .footer-inner {
+ 
+      max-width: 1160px;
+ 
+      margin: 0 auto;
+ 
+      padding: 0 28px;
+ 
+      display: flex;
+ 
+      align-items: center;
+ 
+      justify-content: space-between;
+ 
+      flex-wrap: wrap;
+ 
+      gap: 16px;
+ 
+    }
+ 
+    .footer-copy {
+ 
+      font-size: .875rem;
+ 
+      color: rgba(248,246,241,.55);
+ 
+    }
+ 
+    .footer-copy strong {
+ 
+      color: var(--gold);
+ 
+      font-weight: 600;
+ 
+    }
+ 
+    .footer-links {
+ 
+      display: flex;
+ 
+      gap: 28px;
+ 
+    }
+ 
+    .footer-links a {
+ 
+      font-size: .85rem;
+ 
+      color: rgba(248,246,241,.5);
+ 
+      transition: color .2s;
+ 
+    }
+ 
+    .footer-links a:hover { color: var(--gold); }
+ 
+    /* ============================
+ 
+       ANIMATIONS ON SCROLL
+ 
+    ============================= */
+ 
+    .reveal {
+ 
+      opacity: 0;
+ 
+      transform: translateY(28px);
+ 
+      transition: opacity .7s ease, transform .7s ease;
+ 
+    }
+ 
+    .reveal.visible {
+ 
+      opacity: 1;
+ 
+      transform: translateY(0);
+ 
+    }
+ 
+    /* ============================
+ 
+       RESPONSIVE
+ 
+    ============================= */
+ 
+    @media (max-width: 1024px) {
+ 
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+ 
+      .tec-grid { grid-template-columns: repeat(3, 1fr); }
+ 
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+ 
+      .hero-visual { display: none; }
+ 
+    }
+ 
+    @media (max-width: 768px) {
+ 
+      section { padding: 64px 0; }
+ 
+      .nav-links { display: none; }
+ 
+      .hamburger { display: flex; }
+ 
+      .proyecto-grid { grid-template-columns: 1fr; }
+ 
+      .proyecto-visual { display: none; }
+ 
+      .tec-grid { grid-template-columns: repeat(2, 1fr); }
+ 
+      .equipo-grid { grid-template-columns: 1fr; max-width: 400px; }
+ 
+      .contacto-inner { grid-template-columns: 1fr; }
+ 
+      .form-row { grid-template-columns: 1fr; }
+ 
+      .form-box { padding: 28px 22px; }
+ 
+      .hero-stats-inner { gap: 24px; }
+ 
+      .reportajes-header { flex-direction: column; align-items: flex-start; }
+ 
+      .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+ 
+    }
+ 
+    @media (max-width: 480px) {
+ 
+      .cards-grid { grid-template-columns: 1fr; }
+ 
+      .tec-grid { grid-template-columns: 1fr 1fr; }
+ 
+    }
+</style>
+</head>
+<body>
+<!-- ===== HEADER ===== -->
+<header>
+<nav>
+<div class="logo">
+<div class="logo-icon">📺</div>
+<div class="logo-text">
+ 
+          Noticias Históricas
+<span>Proyecto Educativo · IA</span>
+</div>
+</div>
+<ul class="nav-links">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#proyecto">Proyecto</a></li>
+<li><a href="#reportajes">Reportajes</a></li>
+<li><a href="#tecnologia">Tecnología</a></li>
+<li><a href="#equipo">Equipo</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+</nav>
+</header>
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+<div class="hero-blob hero-blob-1"></div>
+<div class="hero-blob hero-blob-2"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<div class="hero-badge">
+<div class="hero-badge-dot"></div>
+<span>Proyecto educativo con IA · 2026</span>
+</div>
+<h1>Reportajes históricos con <em>Inteligencia Artificial</em></h1>
+<p class="hero-sub">Entrevistamos a personajes históricos utilizando IA, recreaciones visuales y voces realistas. Un canal de noticias que viaja en el tiempo.</p>
+<div class="hero-actions">
+<a href="#reportajes" class="btn btn-primary">▶ Ver nuestros reportajes</a>
+<a href="#proyecto" class="btn btn-outline">Conocer el proyecto</a>
+<a href="https://www.youtube.com/@VON-ALIKS" target="_blank" class="btn btn-youtube">
+  <img src="imagenes/foto1.png" style="width:42px; height:42px; margin-right:8px;">
+  Ver canal en YouTube
+</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-card-stack">
+<div class="hero-card hero-card-sm hero-card-a">
+<span>⚔️</span>
+<p>Siglo XIV · Caballero Medieval</p>
+</div>
+<div class="hero-card hero-card-main">
+<div class="hero-portrait">🏛️</div>
+<div class="hero-card-info">
+<h4>Julio César</h4>
+<p>Roma · 44 a.C.</p>
+</div>
+</div>
+<div class="hero-card hero-card-sm hero-card-b">
+<span>⛵</span>
+<p>1492 · Descubrimiento de América</p>
+</div>
+<div class="floating-tag floating-tag-1">🎙️ Voz generada con IA</div>
+<div class="floating-tag floating-tag-2">🖼️ Imagen recreada con IA</div>
+</div>
+</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stats-inner">
+<div class="stat">
+<div class="stat-num">8+</div>
+<div class="stat-label">Personajes<br>históricos</div>
+</div>
+<div class="stat">
+<div class="stat-num">IA</div>
+<div class="stat-label">Voces e imágenes<br>generadas</div>
+</div>
+<div class="stat">
+<div class="stat-num">100%</div>
+<div class="stat-label">Contenido<br>educativo</div>
+</div>
+<div class="stat">
+<div class="stat-num">20+</div>
+<div class="stat-label">Siglos de<br>historia cubiertos</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== PROYECTO ===== -->
+<section class="proyecto" id="proyecto">
+<div class="container">
+<div class="reveal">
+<span class="section-label">Nuestro proyecto</span>
+<h2 class="section-title">El canal de noticias<br>que viaja en el tiempo</h2>
+<p class="section-sub">Creamos reportajes periodísticos donde entrevistamos a personajes históricos como si fueran actuales, combinando rigor histórico con tecnología de vanguardia.</p>
+</div>
+<div class="proyecto-grid">
+<div class="proyecto-features reveal">
+<div class="feature-item">
+<div class="feature-icon">🎤</div>
+<div class="feature-text">
+<h4>Entrevistas a personajes históricos</h4>
+<p>Simulamos reportajes en los que periodistas del siglo XXI entrevistan a figuras históricas en su propio contexto, con preguntas y respuestas basadas en fuentes documentadas.</p>
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon">🖼️</div>
+<div class="feature-text">
+<h4>Imágenes generadas con IA</h4>
+<p>Recreamos visualmente a cada personaje y su entorno histórico mediante herramientas de inteligencia artificial generativa, con fidelidad histórica y estética cinematográfica.</p>
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon">🔊</div>
+<div class="feature-text">
+<h4>Voces realistas con IA</h4>
+<p>Generamos las voces de los personajes con síntesis de voz por inteligencia artificial, adaptando el tono, el acento y la expresividad al contexto histórico de cada figura.</p>
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon">🎞️</div>
+<div class="feature-text">
+<h4>Vídeos educativos cortos</h4>
+<p>El resultado final son vídeos divulgativos breves, dinámicos y atractivos, pensados para estudiantes, educadores y amantes de la historia.</p>
+</div>
+</div>
+</div>
+<div class="proyecto-visual reveal">
+<div class="proyecto-mockup">
+<div class="mockup-bar">
+<div class="mockup-dot d-red"></div>
+<div class="mockup-dot d-yellow"></div>
+<div class="mockup-dot d-green"></div>
+</div>
+<div class="mockup-body">
+<div class="mockup-line mockup-line-short"></div>
+<div class="mockup-line mockup-line-long"></div>
+<div class="mockup-line mockup-line-med"></div>
+<div class="mockup-person">
+<div class="mockup-avatar">⚔️</div>
+<div class="mockup-person-text">
+<strong>Julio César</strong>
+<span>📍 Roma · 44 a.C.</span>
+</div>
+<div class="mockup-wave">
+<div class="wave-bar" style="animation-delay:.0s"></div>
+<div class="wave-bar" style="animation-delay:.15s"></div>
+<div class="wave-bar" style="animation-delay:.3s"></div>
+<div class="wave-bar" style="animation-delay:.45s"></div>
+<div class="wave-bar" style="animation-delay:.6s"></div>
+</div>
+</div>
+<div class="mockup-line mockup-line-long" style="margin-top:8px"></div>
+<div class="mockup-line mockup-line-med"></div>
+<div class="mockup-line mockup-line-short"></div>
+</div>
+</div>
+<div class="proyecto-badge">
+<small>Proyecto</small>
+ 
+            2026
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== REPORTAJES ===== -->
+<section class="reportajes" id="reportajes">
+<div class="container">
+<div class="reportajes-header reveal">
+<div>
+<span class="section-label">Nuestros reportajes</span>
+<h2 class="section-title">Personajes que dan voz<br>a la historia</h2>
+</div>
+<p class="section-sub" style="max-width:340px">Cada reportaje es una ventana al pasado, producido con rigor histórico e inteligencia artificial.</p>
+</div>
+<div class="cards-grid">
+<!-- Card 1 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1a1a2e,#16213e)">
+<span class="card-era">Antigua Roma · 44 a.C.</span>
+<span class="card-emoji">🏛️</span>
+</div>
+<div class="card-body">
+<h3>Julio César</h3>
+<p>El general y político romano más influyente del mundo antiguo nos habla sobre el poder, la conquista y los idus de marzo.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1c2d1a,#0f1f0e)">
+<span class="card-era">Escandinavia · Siglo IX</span>
+<span class="card-emoji">⚔️</span>
+</div>
+<div class="card-body">
+<h3>Vikingo</h3>
+<p>Un guerrero nórdico del siglo IX nos relata sus expediciones, su cultura y la vida en los fiordos escandinavos.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#2d2010,#1a1208)">
+<span class="card-era">Europa · Siglo XIII</span>
+<span class="card-emoji">🌾</span>
+</div>
+<div class="card-body">
+<h3>Agricultor Medieval</h3>
+<p>Un campesino de la Edad Media nos cuenta cómo era la vida en los campos feudales, las cosechas y las hambrunas.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1a2a3a,#0d1a2a)">
+<span class="card-era">Francia · Siglo XIV</span>
+<span class="card-emoji">🛡️</span>
+</div>
+<div class="card-body">
+<h3>Caballero Medieval</h3>
+<p>Un caballero templario nos habla del código de caballería, los torneos, las cruzadas y la vida en el castillo.</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1a2d2a,#0d1f1c)">
+<span class="card-era">Europa · Siglo XII</span>
+<span class="card-emoji">📜</span>
+</div>
+<div class="card-body">
+<h3>Monje Medieval</h3>
+<p>Un monje benedictino nos muestra el interior de los scriptorium, la vida monástica y el papel de la Iglesia.</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#2a1a10,#1a0f08)">
+<span class="card-era">Inglaterra · Siglo XIX</span>
+<span class="card-emoji">⚙️</span>
+</div>
+<div class="card-body">
+<h3>Obrero Industrial</h3>
+<p>Un trabajador de la Revolución Industrial nos describe las fábricas, las condiciones laborales y el nacimiento del movimiento obrero.</p>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1f1a2a,#120e1a)">
+<span class="card-era">Europa · 1804–1815</span>
+<span class="card-emoji">🎖️</span>
+</div>
+<div class="card-body">
+<h3>Soldado Napoleónico</h3>
+<p>Un soldado de la Grande Armée narra las campañas de Napoleón, Waterloo y la vida del ejército en campaña.</p>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="card reveal">
+<div class="card-img" style="background:linear-gradient(145deg,#1a2a1f,#0d1a12)">
+<span class="card-era">Atlántico · 12 Oct. 1492</span>
+<span class="card-emoji">⛵</span>
+</div>
+<div class="card-body">
+<h3>Testigo del Descubrimiento</h3>
+<p>Un marinero de la expedición de Colón relata en primera persona la travesía del Atlántico y el histórico encuentro con América.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== TECNOLOGÍA ===== -->
+<section class="tecnologia" id="tecnologia">
+<div class="container">
+<div class="tec-header reveal">
+<span class="section-label">Nuestra tecnología</span>
+<h2 class="section-title">La IA al servicio<br>de la historia</h2>
+<p class="section-sub">Combinamos las herramientas más avanzadas de inteligencia artificial para crear una experiencia educativa única e inmersiva.</p>
+</div>
+<div class="tec-grid">
+<div class="tec-card reveal">
+<div class="tec-card-num">01</div>
+<span class="tec-icon">🖼️</span>
+<h4>IA para imágenes</h4>
+<p>Recreamos personajes y escenarios históricos con modelos de generación de imagen de última generación.</p>
+</div>
+<div class="tec-card reveal">
+<div class="tec-card-num">02</div>
+<span class="tec-icon">🔊</span>
+<h4>IA para voz</h4>
+<p>Síntesis de voz realista con entonación, pausa y emoción adaptadas al contexto histórico de cada personaje.</p>
+</div>
+<div class="tec-card reveal">
+<div class="tec-card-num">03</div>
+<span class="tec-icon">🎭</span>
+<h4>Animación de avatares</h4>
+<p>Animamos los retratos históricos para que los personajes se muevan y hablen de forma natural y expresiva.</p>
+</div>
+<div class="tec-card reveal">
+<div class="tec-card-num">04</div>
+<span class="tec-icon">🎬</span>
+<h4>Edición de vídeo</h4>
+<p>Producción audiovisual profesional que integra imágenes, voz, efectos y subtítulos en vídeos educativos atractivos.</p>
+</div>
+<div class="tec-card reveal">
+<div class="tec-card-num">05</div>
+<span class="tec-icon">📚</span>
+<h4>Contenido interactivo</h4>
+<p>Desarrollamos materiales didácticos complementarios para que docentes puedan usar los reportajes en el aula.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== EQUIPO ===== -->
+<section class="equipo" id="equipo">
+<div class="container" style="text-align:center">
+<div class="reveal">
+<span class="section-label">El equipo</span>
+<h2 class="section-title">Quiénes somos</h2>
+<p class="section-sub" style="margin:0 auto">Un equipo apasionado por la historia y la tecnología que cree en el poder de la narrativa para hacer la educación más emocionante.</p>
+</div>
+<div class="equipo-grid">
+<div class="team-card reveal">
+<div class="team-avatar">🎙️</div>
+<h3>Enol Cienfuegos</h3>
+<p class="role">Reportero & Creador</p>
+<p>Responsable de la investigación histórica, el guión de las entrevistas y la presentación de los reportajes ante la cámara.</p>
+</div>
+<div class="team-card reveal">
+<div class="team-avatar">🎬</div>
+<h3>Jorge García</h3>
+<p class="role">Reportero & Creador</p>
+<p>Encargado de la producción audiovisual, la integración de las herramientas de IA y la edición final de los vídeos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== CONTACTO ===== -->
+<section class="contacto" id="contacto">
+<div class="container">
+<div class="reveal" style="text-align:center; margin-bottom:0">
+<span class="section-label">Contacto</span>
+<h2 class="section-title">¿Hablamos?</h2>
+<p class="section-sub" style="margin:0 auto">Si eres docente, creador de contenido o simplemente un apasionado de la historia, nos encantaría conocerte.</p>
+</div>
+<div class="contacto-inner">
+<div class="contacto-info reveal">
+<h3>Escríbenos,<br>estamos en línea</h3>
+<p>Estamos abiertos a colaboraciones educativas, propuestas de personajes históricos, y cualquier consulta sobre el proyecto.</p>
+<div class="contact-detail">
+<div class="contact-detail-icon">📧</div>
+<div class="contact-detail-text">
+<strong>Email</strong>
+<span>hola@noticiashistoricas.es</span>
+</div>
+</div>
+<div class="contact-detail">
+<div class="contact-detail-icon">🏫</div>
+<div class="contact-detail-text">
+<strong>Para docentes</strong>
+<span>Materiales educativos disponibles</span>
+</div>
+</div>
+<div class="contact-detail">
+<div class="contact-detail-icon">🌍</div>
+<div class="contact-detail-text">
+<strong>Ubicación</strong>
+<span>Asturias, España</span>
+</div>
+</div>
+</div>
+<div class="form-box reveal">
+<div class="form-row">
+<div class="form-group">
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" placeholder="Tu nombre"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="tu@email.com"/>
+</div>
+</div>
+<div class="form-group">
+<label for="asunto">Asunto</label>
+<input type="text" id="asunto" placeholder="¿En qué podemos ayudarte?"/>
+</div>
+<div class="form-group">
+<label for="mensaje">Mensaje</label>
+<textarea id="mensaje" placeholder="Cuéntanos tu propuesta, pregunta o comentario..."></textarea>
+</div>
+<button class="form-submit" type="button">📨 Enviar mensaje</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer>
+<div class="footer-inner">
+<p class="footer-copy">© 2026 <strong>Noticias Históricas</strong> — Proyecto educativo con Inteligencia Artificial</p>
+<div class="footer-links">
+<a href="#inicio">Inicio</a>
+<a href="#proyecto">Proyecto</a>
+<a href="#reportajes">Reportajes</a>
+<a href="#contacto">Contacto</a>
+</div>
+</div>
+</footer>
+<!-- ===== SCRIPTS ===== -->
+<script>
+ 
+    // Scroll reveal
+ 
+    const observer = new IntersectionObserver((entries) => {
+ 
+      entries.forEach(e => {
+ 
+        if (e.isIntersecting) {
+ 
+          e.target.classList.add('visible');
+ 
+        }
+ 
+      });
+ 
+    }, { threshold: 0.12 });
+ 
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+    // Stagger children of grids
+ 
+    document.querySelectorAll('.cards-grid .card, .tec-grid .tec-card').forEach((el, i) => {
+ 
+      el.style.transitionDelay = (i * 0.08) + 's';
+ 
+    });
+ 
+    // Wave bar delays
+ 
+    document.querySelectorAll('.wave-bar').forEach((bar, i) => {
+ 
+      bar.style.animationDelay = (i * 0.15) + 's';
+ 
+    });
+ 
+    // Mobile menu (toggle nav-links visibility)
+ 
+    document.getElementById('hamburger').addEventListener('click', () => {
+ 
+      const nav = document.querySelector('.nav-links');
+ 
+      if (nav.style.display === 'flex') {
+ 
+        nav.style.display = 'none';
+ 
+      } else {
+ 
+        nav.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:72px; left:0; right:0; background:rgba(10,22,40,.98); padding:24px 28px; gap:20px; border-bottom:1px solid rgba(201,168,76,.15); z-index:999;';
+ 
+      }
+ 
+    });
+ 
+    // Close mobile menu on link click
+ 
+    document.querySelectorAll('.nav-links a').forEach(link => {
+ 
+      link.addEventListener('click', () => {
+ 
+        const nav = document.querySelector('.nav-links');
+ 
+        nav.style.display = '';
+ 
+      });
+ 
+    });
+ 
+    // Form submit mock
+ 
+    document.querySelector('.form-submit').addEventListener('click', function() {
+ 
+      const nombre = document.getElementById('nombre').value.trim();
+ 
+      const email = document.getElementById('email').value.trim();
+ 
+      const mensaje = document.getElementById('mensaje').value.trim();
+ 
+      if (!nombre || !email || !mensaje) {
+ 
+        this.textContent = '⚠️ Completa todos los campos';
+ 
+        this.style.background = '#c0392b';
+ 
+        setTimeout(() => {
+ 
+          this.textContent = '📨 Enviar mensaje';
+ 
+          this.style.background = '';
+ 
+        }, 2500);
+ 
+        return;
+ 
+      }
+ 
+      this.textContent = '✅ ¡Mensaje enviado!';
+ 
+      this.style.background = '#27ae60';
+ 
+      setTimeout(() => {
+ 
+        this.textContent = '📨 Enviar mensaje';
+ 
+        this.style.background = '';
+ 
+        document.getElementById('nombre').value = '';
+ 
+        document.getElementById('email').value = '';
+ 
+        document.getElementById('asunto').value = '';
+ 
+        document.getElementById('mensaje').value = '';
+ 
+      }, 3000);
+ 
+    });
+</script>
+</body>
+</html>
